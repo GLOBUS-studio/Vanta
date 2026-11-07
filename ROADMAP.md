@@ -28,9 +28,11 @@
 
 ## 0.3 — adoption
 
-- [ ] `@vantajs2/react` wrapper;
-- [ ] `@vantajs2/vue` wrapper;
-- [ ] `@vantajs2/svelte` wrapper;
+- [x] `@vantajs2/react` wrapper;
+- [x] `@vantajs2/vue` wrapper;
+- [x] `@vantajs2/svelte` wrapper;
+- [x] static gallery demo + GitHub Pages workflow;
+- [x] changesets + npm provenance release workflow;
 - [ ] `<vanta-bg>` web component;
 - [ ] legacy `VANTA.*` compatibility package;
 - [ ] migration codemod;

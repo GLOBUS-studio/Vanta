@@ -58,23 +58,14 @@ than bundling p5. `aurora` is a new VantaJS2 effect.
 ## React
 
 ```tsx
-import { useEffect, useRef } from 'react'
-import { createEffect, type EffectHandle } from '@vantajs2/core'
+import { Vanta } from '@vantajs2/react'
 import { waves } from '@vantajs2/effects/waves'
 
 export function Hero() {
-  const ref = useRef<HTMLDivElement>(null)
-  const effect = useRef<EffectHandle<unknown> | null>(null)
-
-  useEffect(() => {
-    if (!ref.current) return
-    effect.current = createEffect(waves, { el: ref.current })
-    return () => effect.current?.destroy()
-  }, [])
-
-  return <div ref={ref} />
+  return <Vanta effect={waves} options={{ color: '#072438' }} style={{ height: 480 }} />
 }
 ```
 
-A dedicated `@vantajs2/react` wrapper is planned; the lifecycle above is the
-entire contract it will use.
+Vue and Svelte wrappers are `@vantajs2/vue` and `@vantajs2/svelte`. If you need
+the raw handle, every wrapper exposes it: React through `onReady`, Vue through
+the exposed `effect` property, Svelte through the action's update lifecycle.

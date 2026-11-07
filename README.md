@@ -106,6 +106,30 @@ and `paused`.
 
 All are original implementations, written from scratch for VantaJS2.
 
+## Framework wrappers
+
+```tsx
+// React
+import { Vanta } from '@vantajs2/react'
+import { waves } from '@vantajs2/effects/waves'
+
+;<Vanta effect={waves} options={{ color: '#072438' }} style={{ height: 480 }} />
+```
+
+```vue
+<!-- Vue 3 -->
+<Vanta :effect="waves" :options="{ color: '#072438' }" style="height: 480px" />
+```
+
+```svelte
+<!-- Svelte -->
+<div use:vanta={{ effect: waves, options: { color: '#072438' } }} />
+```
+
+All wrappers own the same lifecycle: create on mount, `setOptions` on changes,
+`destroy` on unmount. They are SSR-safe and forward the effect handle through an
+`onReady` callback (React) or an exposed `effect` property (Vue).
+
 ## Packages
 
 | Package             | Purpose                                                                     |
@@ -113,19 +137,28 @@ All are original implementations, written from scratch for VantaJS2.
 | `@vantajs2/core`    | Renderer-agnostic runtime: lifecycle, scheduler, input, visibility, quality |
 | `@vantajs2/three`   | three.js adapter: renderer setup, fullscreen pass, deep disposal            |
 | `@vantajs2/effects` | Clean-room effects                                                          |
+| `@vantajs2/react`   | React component                                                             |
+| `@vantajs2/vue`     | Vue 3 component                                                             |
+| `@vantajs2/svelte`  | Svelte action                                                               |
 | `apps/docs`         | Live docs and configurator                                                  |
+| `apps/demo`         | Static gallery demo                                                         |
 
 ## Development
 
 ```bash
 pnpm install
-pnpm dev          # docs at http://localhost:5173
-pnpm test         # unit tests
+pnpm dev           # docs at http://localhost:5173
+pnpm dev:demo      # static demo at http://localhost:5174
+pnpm test          # unit tests
 pnpm typecheck
 pnpm build
 pnpm size
-pnpm test:visual  # Playwright smoke tests
+pnpm test:visual   # Playwright smoke tests
 ```
+
+The static demo gallery builds to `apps/demo/dist` and deploys to GitHub Pages
+via the `Pages` workflow. See [PUBLISHING.md](./PUBLISHING.md) for the release
+process and npm scope setup.
 
 The legacy Vanta snapshot lives in [`legacy/`](./legacy). It is kept for
 reference and historical attribution only; it is not part of the build.

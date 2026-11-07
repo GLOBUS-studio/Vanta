@@ -99,5 +99,23 @@
     "path": "packages/effects/dist/trunk.js",
     "limit": "8 kB",
     "ignore": ["three", "@vantajs2/core", "@vantajs2/three"]
+  },
+  {
+    "name": "@vantajs2/react",
+    "path": "packages/react/dist/index.js",
+    "limit": "4 kB",
+    "ignore": ["react", "react-dom", "@vantajs2/core"]
+  },
+  {
+    "name": "@vantajs2/vue",
+    "path": "packages/vue/dist/index.js",
+    "limit": "4 kB",
+    "ignore": ["vue", "@vantajs2/core"]
+  },
+  {
+    "name": "@vantajs2/svelte",
+    "path": "packages/svelte/dist/index.js",
+    "limit": "4 kB",
+    "ignore": ["@vantajs2/core"]
   }
 ]

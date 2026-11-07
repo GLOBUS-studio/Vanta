@@ -1,0 +1,21 @@
+{
+  "name": "@vantajs2/demo",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --port 5174",
+    "build": "vite build",
+    "preview": "vite preview --port 4174",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@vantajs2/core": "workspace:*",
+    "@vantajs2/effects": "workspace:*",
+    "three": "^0.187.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.3",
+    "vite": "^8.3.6"
+  }
+}

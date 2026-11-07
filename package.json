@@ -10,7 +10,9 @@
     "node": ">=22"
   },
   "scripts": {
-    "dev": "pnpm --filter @vantajs2/docs dev",
+    "dev": "pnpm dev:docs",
+    "dev:docs": "pnpm --filter @vantajs2/docs dev",
+    "dev:demo": "pnpm --filter @vantajs2/demo dev",
     "build": "pnpm -r build",
     "build:packages": "pnpm --filter './packages/**' build",
     "preview": "pnpm --filter @vantajs2/docs preview",
@@ -19,26 +21,36 @@
     "test:visual": "playwright test",
     "typecheck": "pnpm -r typecheck",
     "lint": "eslint .",
-    "lint:pkg": "publint packages/core && publint packages/three && publint packages/effects",
+    "lint:pkg": "publint packages/core && publint packages/three && publint packages/effects && publint packages/react && publint packages/vue && publint packages/svelte",
     "format": "prettier --write .",
     "size": "size-limit",
-    "check": "pnpm lint && pnpm typecheck && pnpm test && pnpm build && pnpm size && pnpm lint:pkg"
+    "check": "pnpm lint && pnpm typecheck && pnpm test && pnpm build && pnpm size && pnpm lint:pkg",
+    "changeset": "changeset",
+    "version:packages": "changeset version",
+    "release": "pnpm build && changeset publish",
+    "publish:dry": "pnpm -r publish --access public --dry-run --no-git-checks"
   },
   "devDependencies": {
+    "@changesets/cli": "^3.0.3",
     "@playwright/test": "^1.65.0",
     "@size-limit/preset-small-lib": "^14.3.0",
     "@types/node": "^26.6.6",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
     "@types/three": "^0.187.0",
     "eslint": "^10.14.0",
     "happy-dom": "^21.0.4",
     "prettier": "^3.9.10",
     "publint": "^0.3.25",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
     "size-limit": "^14.3.0",
     "three": "^0.187.0",
     "tsup": "^9.0.0",
     "typescript": "^5.9.3",
     "typescript-eslint": "^8.72.1",
     "vite": "^8.3.6",
-    "vitest": "^5.1.0"
+    "vitest": "^5.1.0",
+    "vue": "^3.5.45"
   }
 }

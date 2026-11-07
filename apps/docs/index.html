@@ -42,6 +42,7 @@
       <nav class="nav-links" aria-label="Main">
         <a href="#effects">Effects</a>
         <a href="#performance">Performance</a>
+        <a href="#wrappers">Wrappers</a>
         <a href="#api">API</a>
       </nav>
       <div class="nav-actions">
@@ -277,6 +278,61 @@
               <li>Pointer-reactive</li>
             </ul>
           </div>
+        </div>
+      </section>
+
+      <section class="section" id="wrappers" data-reveal>
+        <div class="section-head">
+          <div class="eyebrow"><span class="dot"></span> Wrappers</div>
+          <h2>Use it anywhere.<br />Own the lifecycle.</h2>
+          <p>
+            React, Vue, and Svelte wrappers share the same contract: create on mount, forward
+            <code>setOptions</code> on changes, destroy on unmount. They are SSR-safe and add almost
+            nothing to your bundle.
+          </p>
+        </div>
+
+        <div class="framework-grid">
+          <article class="framework-card card">
+            <div class="framework-head">
+              <span class="framework-name">React</span><span>370 B</span>
+            </div>
+            <pre><code><span class="tok-key">import</span> { Vanta } <span class="tok-key">from</span> <span class="tok-str">'@vantajs2/react'</span>
+<span class="tok-key">import</span> { waves } <span class="tok-key">from</span> <span class="tok-str">'@vantajs2/effects/waves'</span>
+
+&lt;<span class="tok-fn">Vanta</span>
+  effect={waves}
+  options={{ color: <span class="tok-str">'#072438'</span> }}
+  style={{ height: <span class="tok-num">480</span> }}
+/&gt;</code></pre>
+          </article>
+
+          <article class="framework-card card">
+            <div class="framework-head">
+              <span class="framework-name">Vue 3</span><span>338 B</span>
+            </div>
+            <pre><code><span class="tok-key">import</span> { Vanta } <span class="tok-key">from</span> <span class="tok-str">'@vantajs2/vue'</span>
+<span class="tok-key">import</span> { waves } <span class="tok-key">from</span> <span class="tok-str">'@vantajs2/effects/waves'</span>
+
+&lt;<span class="tok-fn">Vanta</span>
+  :effect=<span class="tok-str">"waves"</span>
+  :options=<span class="tok-str">"{ color: '#072438' }"</span>
+  style=<span class="tok-str">"height: 480px"</span>
+/&gt;</code></pre>
+          </article>
+
+          <article class="framework-card card">
+            <div class="framework-head">
+              <span class="framework-name">Svelte</span><span>161 B</span>
+            </div>
+            <pre><code><span class="tok-key">import</span> { vanta } <span class="tok-key">from</span> <span class="tok-str">'@vantajs2/svelte'</span>
+<span class="tok-key">import</span> { waves } <span class="tok-key">from</span> <span class="tok-str">'@vantajs2/effects/waves'</span>
+
+&lt;<span class="tok-fn">div</span>
+  use:vanta={{ effect: waves, options }}
+  style=<span class="tok-str">"height: 480px"</span>
+/&gt;</code></pre>
+          </article>
         </div>
       </section>
 

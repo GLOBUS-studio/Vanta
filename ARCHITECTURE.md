@@ -96,6 +96,7 @@ Quality multiplies the DPR, which is already capped by `maxPixelRatio` (default
 
 - ESM only, `sideEffects: false`, subpath exports per effect.
 - `three` is a peer dependency for `@vantajs2/three` and `@vantajs2/effects`.
+- Framework wrappers are thin lifecycle adapters over the same `EffectHandle`.
 - GLSL lives in TypeScript template strings: no glslify, no raw-loader, no
   abandoned build plugins.
 - Target: ES2022, evergeen browsers with WebGL2.

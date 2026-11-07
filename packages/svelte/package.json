@@ -1,0 +1,66 @@
+{
+  "name": "@vantajs2/svelte",
+  "version": "0.1.0",
+  "description": "Svelte action for VantaJS2 ambient effects.",
+  "license": "MIT",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GLOBUS-studio/Vanta.git",
+    "directory": "packages/svelte"
+  },
+  "homepage": "https://github.com/GLOBUS-studio/Vanta#readme",
+  "bugs": {
+    "url": "https://github.com/GLOBUS-studio/Vanta/issues"
+  },
+  "keywords": [
+    "svelte",
+    "action",
+    "webgl",
+    "background",
+    "animation",
+    "vanta"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE.md"
+  ],
+  "sideEffects": false,
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "typecheck": "tsc -p tsconfig.json --noEmit"
+  },
+  "dependencies": {
+    "@vantajs2/core": "workspace:*"
+  },
+  "peerDependencies": {
+    "svelte": ">=3.0.0"
+  },
+  "tsup": {
+    "entry": [
+      "src/index.ts"
+    ],
+    "format": [
+      "esm"
+    ],
+    "dts": true,
+    "clean": true,
+    "sourcemap": true,
+    "target": "es2022",
+    "treeshake": true
+  }
+}

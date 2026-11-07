@@ -11,5 +11,8 @@ Initial VantaJS2 foundation.
   `cells`, `ripple`, `dots`, `globe`, `halo`, `rings`, `birds`, `topology`,
   `trunk`.
 - Docs app with live configurator and effect switching.
+- Framework wrappers: React, Vue 3, Svelte.
+- Static gallery demo with lazy-mounted previews and GitHub Pages workflow.
 - Unit tests, Playwright smoke tests, size budgets, and CI.
+- Changesets, npm provenance release workflow, and publishing guide.
 - Legacy Vanta 0.5.24 archived in `legacy/` for reference and attribution.
