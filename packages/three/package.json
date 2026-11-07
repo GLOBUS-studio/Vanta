@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "description": "Three.js adapter for VantaJS2: WebGL2 renderer setup, fullscreen shader helpers, and deep disposal.",
   "license": "MIT",
+  "author": "Yevhen Leonidov",
   "type": "module",
   "repository": {
     "type": "git",

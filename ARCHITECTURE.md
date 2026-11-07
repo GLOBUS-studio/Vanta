@@ -99,7 +99,7 @@ Quality multiplies the DPR, which is already capped by `maxPixelRatio` (default
 - Framework wrappers are thin lifecycle adapters over the same `EffectHandle`.
 - GLSL lives in TypeScript template strings: no glslify, no raw-loader, no
   abandoned build plugins.
-- Target: ES2022, evergeen browsers with WebGL2.
+- Target: ES2022, evergreen browsers with WebGL2.
 
 ## Deliberate non-goals for 1.0
 

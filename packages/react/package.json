@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "description": "React component for VantaJS2 ambient effects.",
   "license": "MIT",
+  "author": "Yevhen Leonidov",
   "type": "module",
   "repository": {
     "type": "git",

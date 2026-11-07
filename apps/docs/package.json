@@ -2,6 +2,7 @@
   "name": "@vantajs2/docs",
   "version": "0.1.0",
   "private": true,
+  "author": "Yevhen Leonidov",
   "type": "module",
   "scripts": {
     "dev": "vite",

@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "description": "Renderer-agnostic runtime for VantaJS2: lifecycle, scheduling, input, visibility, and adaptive quality.",
   "license": "MIT",
+  "author": "Yevhen Leonidov",
   "type": "module",
   "repository": {
     "type": "git",

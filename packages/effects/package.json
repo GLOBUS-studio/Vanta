@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "description": "Clean-room WebGL2 ambient effects for VantaJS2.",
   "license": "MIT",
+  "author": "Yevhen Leonidov",
   "type": "module",
   "repository": {
     "type": "git",

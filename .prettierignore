@@ -6,4 +6,3 @@ apps/demo/static/style.css
 pnpm-lock.yaml
 test-results
 playwright-report
-visual-*.png

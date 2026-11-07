@@ -5,6 +5,7 @@
   "type": "module",
   "description": "Ambient 3D backgrounds for the modern web. WebGL2, typed, adaptive, and clean to tear down.",
   "license": "MIT",
+  "author": "Yevhen Leonidov",
   "packageManager": "pnpm@12.9.1",
   "engines": {
     "node": ">=22"

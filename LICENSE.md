@@ -1,6 +1,6 @@
 MIT License
 
-Copyright (c) 2026 VantaJS2 contributors
+Copyright (c) 2026 Yevhen Leonidov
 Copyright (c) 2020 Teng Bao (original Vanta, see legacy/ and NOTICE.md)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy

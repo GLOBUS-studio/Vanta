@@ -10,7 +10,6 @@ export default tseslint.config(
       'apps/demo/static/style.css',
       'test-results/**',
       'playwright-report/**',
-      'visual-*.png',
       'pnpm-lock.yaml',
     ],
   },

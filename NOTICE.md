@@ -1,7 +1,7 @@
 # Notice and provenance
 
-VantaJS2 is an independent reincarnation of Vanta. It is not a drop-in copy of
-the original source.
+VantaJS2 is an independent reincarnation of Vanta, created and maintained by
+Yevhen Leonidov. It is not a drop-in copy of the original source.
 
 ## Original Vanta
 
@@ -15,8 +15,8 @@ VantaJS2 package.
 
 ## VantaJS2
 
-New runtime, adapter, documentation, and effects are original work by the
-VantaJS2 contributors and are released under the MIT license.
+New runtime, adapter, documentation, and effects are original work by Yevhen
+Leonidov and the VantaJS2 contributors and are released under the MIT license.
 
 All effects are written from scratch:
 

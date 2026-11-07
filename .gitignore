@@ -16,9 +16,6 @@ blob-report/
 .env
 .env.*
 !.env.example
-visual-*.png
-shots/
-all-effects.json
 .DS_Store
 Thumbs.db
 
