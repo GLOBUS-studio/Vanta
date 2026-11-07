@@ -1,0 +1,31 @@
+[
+  {
+    "name": "@vantajs2/core",
+    "path": "packages/core/dist/index.js",
+    "limit": "12 kB"
+  },
+  {
+    "name": "@vantajs2/three",
+    "path": "packages/three/dist/index.js",
+    "limit": "6 kB",
+    "ignore": ["three"]
+  },
+  {
+    "name": "@vantajs2/effects/waves",
+    "path": "packages/effects/dist/waves.js",
+    "limit": "8 kB",
+    "ignore": ["three", "@vantajs2/core", "@vantajs2/three"]
+  },
+  {
+    "name": "@vantajs2/effects/aurora",
+    "path": "packages/effects/dist/aurora.js",
+    "limit": "8 kB",
+    "ignore": ["three", "@vantajs2/core", "@vantajs2/three"]
+  },
+  {
+    "name": "@vantajs2/effects/net",
+    "path": "packages/effects/dist/net.js",
+    "limit": "8 kB",
+    "ignore": ["three", "@vantajs2/core", "@vantajs2/three"]
+  }
+]

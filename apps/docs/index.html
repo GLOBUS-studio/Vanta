@@ -1,0 +1,388 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="VantaJS2 — ambient 3D backgrounds for the modern web. WebGL2, adaptive quality, one RAF loop, clean teardown."
+    />
+    <meta name="theme-color" content="#04060a" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="VantaJS2 — ambient 3D for the modern web" />
+    <meta
+      property="og:description"
+      content="A ground-up reincarnation of Vanta: WebGL2, one RAF loop, adaptive quality, clean teardown, and clean-room effects."
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%2358d6ff'/%3E%3Ctext x='32' y='42' font-family='monospace' font-size='22' font-weight='700' text-anchor='middle' fill='%2305070b'%3EV2%3C/text%3E%3C/svg%3E"
+    />
+    <title>VantaJS2 — ambient 3D for the modern web</title>
+    <script>
+      document.documentElement.classList.add('js')
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="noise" aria-hidden="true"></div>
+
+    <header class="nav">
+      <a class="brand" href="#top" aria-label="VantaJS2 home">
+        <span class="brand-mark">V2</span>
+        <span class="brand-name">VantaJS2</span>
+        <span class="brand-tag">alpha</span>
+      </a>
+      <nav class="nav-links" aria-label="Main">
+        <a href="#effects">Effects</a>
+        <a href="#performance">Performance</a>
+        <a href="#api">API</a>
+      </nav>
+      <div class="nav-actions">
+        <a
+          class="ghost"
+          href="https://github.com/GLOBUS-studio/Vanta"
+          target="_blank"
+          rel="noreferrer"
+        >
+          GitHub <span aria-hidden="true">↗</span>
+        </a>
+        <button class="install" data-copy="pnpm add @vantajs2/core @vantajs2/effects three">
+          <span>pnpm add @vantajs2/core</span>
+          <span class="copy-icon" aria-hidden="true">⧉</span>
+        </button>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="hero-copy" data-reveal>
+          <div class="eyebrow">
+            <span class="dot"></span> WebGL2 · clean-room effects · zero license baggage
+          </div>
+          <h1>
+            Ambient 3D,<br />
+            <span class="gradient">without the baggage.</span>
+          </h1>
+          <p class="lede">
+            VantaJS2 is a ground-up reincarnation of Vanta. One RAF loop for every effect, adaptive
+            quality under load, and a teardown that actually releases the GPU. Built for evergreen
+            browsers, not for 2019.
+          </p>
+          <div class="hero-actions">
+            <a class="primary" href="#effects"
+              >Explore the engine <span aria-hidden="true">→</span></a
+            >
+            <button class="secondary" data-copy="pnpm add @vantajs2/core @vantajs2/effects three">
+              Copy install
+            </button>
+          </div>
+          <dl class="metrics">
+            <div>
+              <dt>core</dt>
+              <dd>0 deps</dd>
+            </div>
+            <div>
+              <dt>runtime</dt>
+              <dd>1 RAF</dd>
+            </div>
+            <div>
+              <dt>floor</dt>
+              <dd>WebGL2</dd>
+            </div>
+            <div>
+              <dt>teardown</dt>
+              <dd>deep</dd>
+            </div>
+          </dl>
+        </div>
+
+        <div class="hero-stage-wrap" data-reveal>
+          <div class="stage" id="stage">
+            <div class="stage-hud">
+              <div class="stage-label">
+                <span class="live" id="live-dot"></span>
+                <span>LIVE / <b id="effect-name">WAVES</b></span>
+              </div>
+              <div class="stage-stats" aria-live="polite">
+                <span><b id="stat-fps">–</b> FPS</span>
+                <span class="sep">·</span>
+                <span>DPR <b id="stat-dpr">–</b></span>
+                <span class="sep">·</span>
+                <span>Q <b id="stat-quality">–</b></span>
+              </div>
+            </div>
+            <div class="stage-hud bottom">
+              <div class="effect-tabs" role="tablist" aria-label="Effect">
+                <button class="tab active" data-effect="waves" role="tab" aria-selected="true">
+                  Waves
+                </button>
+                <button class="tab" data-effect="aurora" role="tab" aria-selected="false">
+                  Aurora
+                </button>
+                <button class="tab" data-effect="net" role="tab" aria-selected="false">Net</button>
+              </div>
+              <div class="stage-actions">
+                <button class="icon-btn" id="pause" title="Pause" aria-label="Pause">Ⅱ</button>
+                <button class="icon-btn" id="recreate" title="Recreate" aria-label="Recreate">
+                  ↻
+                </button>
+              </div>
+            </div>
+            <div class="stage-fallback" id="fallback" hidden>
+              <span>WebGL2 unavailable</span>
+              <small>CSS fallback is active</small>
+            </div>
+          </div>
+          <p class="stage-caption">
+            Live canvas. Move your pointer, switch effects, recreate the instance. Offscreen
+            instances pause themselves.
+          </p>
+        </div>
+      </section>
+
+      <section class="strip" data-reveal aria-label="Principles">
+        <div class="strip-item">
+          <span class="strip-index">01</span>
+          <span>One loop, every effect</span>
+        </div>
+        <div class="strip-item">
+          <span class="strip-index">02</span>
+          <span>Pauses offscreen &amp; background tabs</span>
+        </div>
+        <div class="strip-item">
+          <span class="strip-index">03</span>
+          <span>Adaptive quality, capped DPR</span>
+        </div>
+        <div class="strip-item">
+          <span class="strip-index">04</span>
+          <span>Typed options, honest teardown</span>
+        </div>
+      </section>
+
+      <section class="section" id="effects" data-reveal>
+        <div class="section-head">
+          <div class="eyebrow"><span class="dot"></span> Workbench</div>
+          <h2>Change the art.<br />Watch the runtime respond.</h2>
+          <p>
+            Every control below is a typed option. Every change goes through the same
+            <code>setOptions</code> path your app will use.
+          </p>
+        </div>
+
+        <div class="workbench">
+          <div class="controls card" id="controls" aria-label="Effect options"></div>
+          <div class="code-card card">
+            <div class="code-head">
+              <span
+                ><span class="code-dot red"></span><span class="code-dot yellow"></span
+                ><span class="code-dot green"></span> usage.ts</span
+              >
+              <button class="copy-code" id="copy-code">Copy</button>
+            </div>
+            <pre><code id="code"></code></pre>
+            <div class="code-foot">
+              <span>ESM</span>
+              <span>TypeScript</span>
+              <span>Tree-shakeable</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="performance" data-reveal>
+        <div class="section-head">
+          <div class="eyebrow"><span class="dot"></span> Runtime</div>
+          <h2>Performance is a feature,<br />not a footnote.</h2>
+          <p>
+            The core is renderer-agnostic. three.js is a peer dependency, not a hidden bundle tax.
+            The runtime owns time, size, input, and quality.
+          </p>
+        </div>
+
+        <div class="feature-grid">
+          <article class="feature card">
+            <div class="feature-icon">∿</div>
+            <h3>One RAF loop</h3>
+            <p>
+              All instances share a single scheduler. No competing animation loops, no duplicated
+              bookkeeping.
+            </p>
+          </article>
+          <article class="feature card">
+            <div class="feature-icon">◐</div>
+            <h3>Adaptive quality</h3>
+            <p>
+              Sustained low frame rates lower the DPR multiplier automatically. A single hitch never
+              triggers a downgrade.
+            </p>
+          </article>
+          <article class="feature card">
+            <div class="feature-icon">⌁</div>
+            <h3>Visibility aware</h3>
+            <p>
+              IntersectionObserver and visibilitychange stop the loop when nothing is visible.
+              Battery is not a suggestion.
+            </p>
+          </article>
+          <article class="feature card">
+            <div class="feature-icon">⌀</div>
+            <h3>Deep teardown</h3>
+            <p>
+              Geometry, materials, textures, render targets, listeners, observers, and canvas are
+              released on destroy.
+            </p>
+          </article>
+          <article class="feature card">
+            <div class="feature-icon">◇</div>
+            <h3>SSR-safe imports</h3>
+            <p>
+              No window access at module scope. Import the effect in a server component; create it
+              on the client.
+            </p>
+          </article>
+          <article class="feature card">
+            <div class="feature-icon">✦</div>
+            <h3>Clean-room effects</h3>
+            <p>
+              Original shaders and algorithms. No copied Shadertoy code, no p5 runtime, no license
+              surprises.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section" data-reveal>
+        <div class="section-head">
+          <div class="eyebrow"><span class="dot"></span> Gallery</div>
+          <h2>Three effects. One contract.</h2>
+          <p>
+            Displaced geometry, fullscreen shaders, and a point-and-line mesh live behind the same
+            lifecycle. Add an effect without teaching the runtime about three.js.
+          </p>
+        </div>
+
+        <div class="preview-card card">
+          <div class="preview" id="preview">
+            <div class="preview-label">AURORA / 0.9 QUALITY</div>
+          </div>
+          <div class="preview-copy">
+            <span class="preview-index">02</span>
+            <h3>Aurora</h3>
+            <p>
+              A fullscreen fragment shader with original FBM curtains, pointer drift, and dithering
+              to keep gradients clean on 8-bit displays.
+            </p>
+            <ul>
+              <li>One draw call</li>
+              <li>No textures</li>
+              <li>Pointer-reactive</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="api" data-reveal>
+        <div class="section-head">
+          <div class="eyebrow"><span class="dot"></span> API</div>
+          <h2>Small surface.<br />Nothing hidden.</h2>
+        </div>
+
+        <div class="api-grid">
+          <div class="code-card card">
+            <div class="code-head">
+              <span
+                ><span class="code-dot red"></span><span class="code-dot yellow"></span
+                ><span class="code-dot green"></span> mount.ts</span
+              >
+              <button
+                class="copy-code"
+                data-copy="import { createEffect } from '@vantajs2/core'
+import { waves } from '@vantajs2/effects/waves'
+
+const effect = createEffect(waves, {
+  el: '#hero',
+  color: '#072438',
+  highlightColor: '#63e6ff',
+  speed: 1,
+})
+
+await effect.ready
+effect.setOptions({ waveHeight: 2.2 })
+effect.pause()
+effect.resume()
+effect.destroy()"
+              >
+                Copy
+              </button>
+            </div>
+            <pre><code><span class="tok-key">import</span> { createEffect } <span class="tok-key">from</span> <span class="tok-str">'@vantajs2/core'</span>
+<span class="tok-key">import</span> { waves } <span class="tok-key">from</span> <span class="tok-str">'@vantajs2/effects/waves'</span>
+
+<span class="tok-key">const</span> effect = <span class="tok-fn">createEffect</span>(waves, {
+  el: <span class="tok-str">'#hero'</span>,
+  color: <span class="tok-str">'#072438'</span>,
+  highlightColor: <span class="tok-str">'#63e6ff'</span>,
+  speed: <span class="tok-num">1</span>,
+})
+
+<span class="tok-key">await</span> effect.ready
+effect.<span class="tok-fn">setOptions</span>({ waveHeight: <span class="tok-num">2.2</span> })
+effect.<span class="tok-fn">pause</span>()
+effect.<span class="tok-fn">resume</span>()
+effect.<span class="tok-fn">destroy</span>()</code></pre>
+          </div>
+
+          <div class="api-notes">
+            <div class="api-note">
+              <span class="api-key">effect.ready</span>
+              <p>A promise. It resolves after the first frame, including the fallback path.</p>
+            </div>
+            <div class="api-note">
+              <span class="api-key">effect.stats</span>
+              <p>Live FPS, frame time, DPR, quality, frame count, visibility, and pause state.</p>
+            </div>
+            <div class="api-note">
+              <span class="api-key">effect.on()</span>
+              <p>
+                Typed events: ready, resize, pause, resume, error, contextlost, contextrestored,
+                qualitychange, destroy.
+              </p>
+            </div>
+            <div class="api-note">
+              <span class="api-key">effect.destroy()</span>
+              <p>
+                Idempotent. Removes the canvas, restores container styles, and disposes GPU
+                resources.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-brand">
+        <span class="brand-mark">V2</span>
+        <div>
+          <strong>VantaJS2</strong>
+          <span>Ambient 3D for the modern web.</span>
+        </div>
+      </div>
+      <div class="footer-meta">
+        <span>MIT · clean-room effects</span>
+        <a href="https://github.com/GLOBUS-studio/Vanta" target="_blank" rel="noreferrer"
+          >GitHub ↗</a
+        >
+      </div>
+    </footer>
+
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>

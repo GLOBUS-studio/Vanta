@@ -1,0 +1,11 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@vantajs2/core": ["../core/src/index.ts"],
+      "@vantajs2/three": ["../three/src/index.ts"]
+    }
+  },
+  "include": ["src"]
+}

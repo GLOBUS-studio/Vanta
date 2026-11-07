@@ -1,0 +1,14 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "types": ["vite/client"],
+    "paths": {
+      "@vantajs2/core": ["../../packages/core/src/index.ts"],
+      "@vantajs2/three": ["../../packages/three/src/index.ts"],
+      "@vantajs2/effects": ["../../packages/effects/src/index.ts"],
+      "@vantajs2/effects/*": ["../../packages/effects/src/*"]
+    }
+  },
+  "include": ["src", "vite.config.ts"]
+}

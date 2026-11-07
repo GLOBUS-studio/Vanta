@@ -1,0 +1,44 @@
+{
+  "name": "vantajs2",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Ambient 3D backgrounds for the modern web. WebGL2, typed, adaptive, and clean to tear down.",
+  "license": "MIT",
+  "packageManager": "pnpm@12.9.1",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "dev": "pnpm --filter @vantajs2/docs dev",
+    "build": "pnpm -r build",
+    "build:packages": "pnpm --filter './packages/**' build",
+    "preview": "pnpm --filter @vantajs2/docs preview",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:visual": "playwright test",
+    "typecheck": "pnpm -r typecheck",
+    "lint": "eslint .",
+    "lint:pkg": "publint packages/core && publint packages/three && publint packages/effects",
+    "format": "prettier --write .",
+    "size": "size-limit",
+    "check": "pnpm lint && pnpm typecheck && pnpm test && pnpm build && pnpm size && pnpm lint:pkg"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.65.0",
+    "@size-limit/preset-small-lib": "^14.3.0",
+    "@types/node": "^26.6.6",
+    "@types/three": "^0.187.0",
+    "eslint": "^10.14.0",
+    "happy-dom": "^21.0.4",
+    "prettier": "^3.9.10",
+    "publint": "^0.3.25",
+    "size-limit": "^14.3.0",
+    "three": "^0.187.0",
+    "tsup": "^9.0.0",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.72.1",
+    "vite": "^8.3.6",
+    "vitest": "^5.1.0"
+  }
+}
