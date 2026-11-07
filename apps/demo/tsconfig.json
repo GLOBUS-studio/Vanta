@@ -10,5 +10,5 @@
       "@vantajs2/effects/*": ["../../packages/effects/src/*"]
     }
   },
-  "include": ["src", "vite.config.ts"]
+  "include": ["src", "browser", "vite.config.ts", "tsup.browser.config.ts"]
 }

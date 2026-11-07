@@ -63,7 +63,12 @@ pnpm publish:dry
 
 ## Static demo
 
-The demo app is a static Vite build:
+There are two static outputs:
+
+1. **No-build HTML upload** — `apps/demo/static/`:
+   `index.html`, `style.css`, `main.js`, `vanta2.js`. Upload as-is to any HTML
+   host. Rebuild with `pnpm build:static`.
+2. **Vite demo** — `apps/demo/dist`:
 
 ```bash
 pnpm --filter @vantajs2/demo build

@@ -117,5 +117,10 @@
     "path": "packages/svelte/dist/index.js",
     "limit": "4 kB",
     "ignore": ["@vantajs2/core"]
+  },
+  {
+    "name": "static demo bundle",
+    "path": "apps/demo/static/vanta2.js",
+    "limit": "200 kB"
   }
 ]

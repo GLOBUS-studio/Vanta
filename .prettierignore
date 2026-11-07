@@ -1,6 +1,8 @@
 node_modules
 dist
 legacy
+apps/demo/static/vanta2.js
+apps/demo/static/style.css
 pnpm-lock.yaml
 test-results
 playwright-report

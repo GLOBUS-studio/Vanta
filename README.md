@@ -156,9 +156,39 @@ pnpm size
 pnpm test:visual   # Playwright smoke tests
 ```
 
-The static demo gallery builds to `apps/demo/dist` and deploys to GitHub Pages
-via the `Pages` workflow. See [PUBLISHING.md](./PUBLISHING.md) for the release
-process and npm scope setup.
+### Static demo for plain HTML hosting
+
+`apps/demo/static/` is a complete no-build artifact. Upload these four files to
+any HTML host — no Node, pnpm, Vite, or server required:
+
+```
+apps/demo/static/
+  index.html
+  style.css
+  main.js
+  vanta2.js
+```
+
+`vanta2.js` is an IIFE browser bundle that includes three.js and all effects and
+exposes a global API:
+
+```html
+<div id="hero" style="height: 480px"></div>
+<script src="./vanta2.js"></script>
+<script>
+  const effect = VANTA2.mount('waves', '#hero', { color: '#072438' })
+  effect.setOptions({ waveHeight: 2.2 })
+  effect.destroy()
+</script>
+```
+
+It also works by opening `index.html` directly from disk. Rebuild it with
+`pnpm build:static`. For production apps, prefer the tree-shakeable ESM packages
+instead of the full demo bundle.
+
+The Vite demo builds to `apps/demo/dist` and deploys to GitHub Pages via the
+`Pages` workflow. See [PUBLISHING.md](./PUBLISHING.md) for the release process
+and npm scope setup.
 
 The legacy Vanta snapshot lives in [`legacy/`](./legacy). It is kept for
 reference and historical attribution only; it is not part of the build.

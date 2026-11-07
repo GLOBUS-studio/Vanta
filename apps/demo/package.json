@@ -6,6 +6,8 @@
   "scripts": {
     "dev": "vite --port 5174",
     "build": "vite build",
+    "build:browser": "tsup --config tsup.browser.config.ts",
+    "build:static": "pnpm build:browser && node ./scripts/sync-static.mjs",
     "preview": "vite preview --port 4174",
     "typecheck": "tsc --noEmit"
   },
@@ -15,6 +17,7 @@
     "three": "^0.187.0"
   },
   "devDependencies": {
+    "tsup": "^9.0.0",
     "typescript": "^5.9.3",
     "vite": "^8.3.6"
   }

@@ -44,6 +44,7 @@ jobs:
       - run: pnpm exec playwright install --with-deps chromium
       - run: pnpm --filter @vantajs2/docs build
       - run: pnpm --filter @vantajs2/demo build
+      - run: pnpm --filter @vantajs2/demo build:static
       - run: pnpm test:visual
       - uses: actions/upload-artifact@v4
         if: failure()

@@ -6,6 +6,8 @@ export default tseslint.config(
       '**/dist/**',
       '**/node_modules/**',
       'legacy/**',
+      'apps/demo/static/vanta2.js',
+      'apps/demo/static/style.css',
       'test-results/**',
       'playwright-report/**',
       'visual-*.png',
