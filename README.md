@@ -3,8 +3,9 @@
 Ambient 3D backgrounds for the modern web. A ground-up reincarnation of
 [Vanta](https://github.com/tengbao/vanta), not a dependency bump.
 
-> **Status: alpha.** The runtime, three.js adapter, and two clean-room effects
-> (`waves`, `aurora`) are implemented. More effects land behind the same contract.
+> **Status: alpha.** The runtime, three.js adapter, and all fifteen clean-room
+> effects are implemented. Next: visual regression baselines, wrappers, and
+> publish hardening.
 
 ## Why another Vanta?
 
@@ -85,11 +86,23 @@ and `paused`.
 
 ## Effects
 
-| Effect   | Kind                              | Entry                      |
-| -------- | --------------------------------- | -------------------------- |
-| `waves`  | displaced geometry + custom light | `@vantajs2/effects/waves`  |
-| `aurora` | fullscreen FBM shader             | `@vantajs2/effects/aurora` |
-| `net`    | points + additive line mesh       | `@vantajs2/effects/net`    |
+| Effect     | Kind                              | Entry                        |
+| ---------- | --------------------------------- | ---------------------------- |
+| `waves`    | displaced geometry + custom light | `@vantajs2/effects/waves`    |
+| `aurora`   | fullscreen FBM shader             | `@vantajs2/effects/aurora`   |
+| `net`      | points + additive line mesh       | `@vantajs2/effects/net`      |
+| `fog`      | fullscreen noise fog              | `@vantajs2/effects/fog`      |
+| `clouds`   | sunset cloudscape shader          | `@vantajs2/effects/clouds`   |
+| `clouds2`  | cosmic cloud shader               | `@vantajs2/effects/clouds2`  |
+| `cells`    | animated Worley cells             | `@vantajs2/effects/cells`    |
+| `ripple`   | pointer-reactive ripple shader    | `@vantajs2/effects/ripple`   |
+| `dots`     | spherical point field             | `@vantajs2/effects/dots`     |
+| `globe`    | wireframe globe + links           | `@vantajs2/effects/globe`    |
+| `halo`     | radial halo shader                | `@vantajs2/effects/halo`     |
+| `rings`    | orbital neon rings                | `@vantajs2/effects/rings`    |
+| `birds`    | CPU boids flock                   | `@vantajs2/effects/birds`    |
+| `topology` | animated wireframe terrain        | `@vantajs2/effects/topology` |
+| `trunk`    | recursive fractal tree            | `@vantajs2/effects/trunk`    |
 
 All are original implementations, written from scratch for VantaJS2.
 

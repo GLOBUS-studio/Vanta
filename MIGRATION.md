@@ -49,10 +49,11 @@ effect.destroy()
 | `effect.destroy()`                           | same, now idempotent and deep           |
 | default export from `vanta/dist/vanta.*.min` | named export from `@vantajs2/effects/*` |
 
-Not yet ported: `fog`, `clouds`, `clouds2`, `cells`, `dots`, `globe`, `halo`,
-`rings`, `ripple`, `birds`, `trunk`, `topology`. They will land as clean-room
-effects behind the same contract. p5-based effects will be rewritten rather than
-bundling p5.
+All original effects are ported as clean-room modules behind the same contract:
+`waves`, `net`, `fog`, `clouds`, `clouds2`, `cells`, `dots`, `globe`, `halo`,
+`rings`, `ripple`, `birds`, `topology`, and `trunk`. The p5-based effects
+(`trunk`, `topology`) were rewritten as three.js geometry/shader effects rather
+than bundling p5. `aurora` is a new VantaJS2 effect.
 
 ## React
 

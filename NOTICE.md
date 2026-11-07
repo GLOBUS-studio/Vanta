@@ -18,11 +18,16 @@ VantaJS2 package.
 New runtime, adapter, documentation, and effects are original work by the
 VantaJS2 contributors and are released under the MIT license.
 
-The `waves` and `aurora` effects are written from scratch:
+All effects are written from scratch:
 
-- `waves` uses a sum-of-sines height field, analytic-ish lighting via screen-space
+- `waves` uses a sum-of-sines height field, lighting via screen-space
   derivatives, and a custom color/fog model.
 - `aurora` uses a domain-warped value-noise FBM and a custom curtain model.
+- `fog`, `clouds`, `clouds2`, `cells`, `ripple`, and `halo` are original
+  procedural shaders built from value noise, Worley noise, and polar fields.
+- `dots`, `globe`, and `net` are original point/line constructions.
+- `rings`, `topology`, and `trunk` are original geometry/line systems.
+- `birds` is an original CPU boids implementation with instanced geometry.
 
 No Shadertoy shader source is copied. No p5.js source is bundled. No code from
 the original Vanta effect implementations is compiled into the new packages.

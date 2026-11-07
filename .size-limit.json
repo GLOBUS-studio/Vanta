@@ -27,5 +27,77 @@
     "path": "packages/effects/dist/net.js",
     "limit": "8 kB",
     "ignore": ["three", "@vantajs2/core", "@vantajs2/three"]
+  },
+  {
+    "name": "@vantajs2/effects/fog",
+    "path": "packages/effects/dist/fog.js",
+    "limit": "8 kB",
+    "ignore": ["three", "@vantajs2/core", "@vantajs2/three"]
+  },
+  {
+    "name": "@vantajs2/effects/clouds",
+    "path": "packages/effects/dist/clouds.js",
+    "limit": "8 kB",
+    "ignore": ["three", "@vantajs2/core", "@vantajs2/three"]
+  },
+  {
+    "name": "@vantajs2/effects/clouds2",
+    "path": "packages/effects/dist/clouds2.js",
+    "limit": "8 kB",
+    "ignore": ["three", "@vantajs2/core", "@vantajs2/three"]
+  },
+  {
+    "name": "@vantajs2/effects/cells",
+    "path": "packages/effects/dist/cells.js",
+    "limit": "8 kB",
+    "ignore": ["three", "@vantajs2/core", "@vantajs2/three"]
+  },
+  {
+    "name": "@vantajs2/effects/ripple",
+    "path": "packages/effects/dist/ripple.js",
+    "limit": "8 kB",
+    "ignore": ["three", "@vantajs2/core", "@vantajs2/three"]
+  },
+  {
+    "name": "@vantajs2/effects/dots",
+    "path": "packages/effects/dist/dots.js",
+    "limit": "8 kB",
+    "ignore": ["three", "@vantajs2/core", "@vantajs2/three"]
+  },
+  {
+    "name": "@vantajs2/effects/globe",
+    "path": "packages/effects/dist/globe.js",
+    "limit": "8 kB",
+    "ignore": ["three", "@vantajs2/core", "@vantajs2/three"]
+  },
+  {
+    "name": "@vantajs2/effects/halo",
+    "path": "packages/effects/dist/halo.js",
+    "limit": "8 kB",
+    "ignore": ["three", "@vantajs2/core", "@vantajs2/three"]
+  },
+  {
+    "name": "@vantajs2/effects/rings",
+    "path": "packages/effects/dist/rings.js",
+    "limit": "8 kB",
+    "ignore": ["three", "@vantajs2/core", "@vantajs2/three"]
+  },
+  {
+    "name": "@vantajs2/effects/birds",
+    "path": "packages/effects/dist/birds.js",
+    "limit": "10 kB",
+    "ignore": ["three", "@vantajs2/core", "@vantajs2/three"]
+  },
+  {
+    "name": "@vantajs2/effects/topology",
+    "path": "packages/effects/dist/topology.js",
+    "limit": "8 kB",
+    "ignore": ["three", "@vantajs2/core", "@vantajs2/three"]
+  },
+  {
+    "name": "@vantajs2/effects/trunk",
+    "path": "packages/effects/dist/trunk.js",
+    "limit": "8 kB",
+    "ignore": ["three", "@vantajs2/core", "@vantajs2/three"]
   }
 ]

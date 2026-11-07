@@ -2,11 +2,23 @@
 
 Clean-room effects for VantaJS2.
 
-| Effect   | Import                     |
-| -------- | -------------------------- |
-| `waves`  | `@vantajs2/effects/waves`  |
-| `aurora` | `@vantajs2/effects/aurora` |
-| `net`    | `@vantajs2/effects/net`    |
+| Effect     | Import                       |
+| ---------- | ---------------------------- |
+| `waves`    | `@vantajs2/effects/waves`    |
+| `aurora`   | `@vantajs2/effects/aurora`   |
+| `net`      | `@vantajs2/effects/net`      |
+| `fog`      | `@vantajs2/effects/fog`      |
+| `clouds`   | `@vantajs2/effects/clouds`   |
+| `clouds2`  | `@vantajs2/effects/clouds2`  |
+| `cells`    | `@vantajs2/effects/cells`    |
+| `ripple`   | `@vantajs2/effects/ripple`   |
+| `dots`     | `@vantajs2/effects/dots`     |
+| `globe`    | `@vantajs2/effects/globe`    |
+| `halo`     | `@vantajs2/effects/halo`     |
+| `rings`    | `@vantajs2/effects/rings`    |
+| `birds`    | `@vantajs2/effects/birds`    |
+| `topology` | `@vantajs2/effects/topology` |
+| `trunk`    | `@vantajs2/effects/trunk`    |
 
 ```ts
 import { createEffect } from '@vantajs2/core'

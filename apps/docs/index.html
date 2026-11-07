@@ -119,15 +119,7 @@
               </div>
             </div>
             <div class="stage-hud bottom">
-              <div class="effect-tabs" role="tablist" aria-label="Effect">
-                <button class="tab active" data-effect="waves" role="tab" aria-selected="true">
-                  Waves
-                </button>
-                <button class="tab" data-effect="aurora" role="tab" aria-selected="false">
-                  Aurora
-                </button>
-                <button class="tab" data-effect="net" role="tab" aria-selected="false">Net</button>
-              </div>
+              <div class="effect-tabs" id="effect-tabs" role="tablist" aria-label="Effect"></div>
               <div class="stage-actions">
                 <button class="icon-btn" id="pause" title="Pause" aria-label="Pause">Ⅱ</button>
                 <button class="icon-btn" id="recreate" title="Recreate" aria-label="Recreate">
@@ -171,8 +163,8 @@
           <div class="eyebrow"><span class="dot"></span> Workbench</div>
           <h2>Change the art.<br />Watch the runtime respond.</h2>
           <p>
-            Every control below is a typed option. Every change goes through the same
-            <code>setOptions</code> path your app will use.
+            Pick any of the fifteen effects, then tune it. Every control below is a typed option;
+            every change goes through the same <code>setOptions</code> path your app will use.
           </p>
         </div>
 
@@ -261,10 +253,10 @@
       <section class="section" data-reveal>
         <div class="section-head">
           <div class="eyebrow"><span class="dot"></span> Gallery</div>
-          <h2>Three effects. One contract.</h2>
+          <h2>Fifteen effects. One contract.</h2>
           <p>
-            Displaced geometry, fullscreen shaders, and a point-and-line mesh live behind the same
-            lifecycle. Add an effect without teaching the runtime about three.js.
+            Displaced geometry, fullscreen shaders, point clouds, a flock, and a fractal tree live
+            behind the same lifecycle. Add an effect without teaching the runtime about three.js.
           </p>
         </div>
 

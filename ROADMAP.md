@@ -8,18 +8,21 @@
 - [x] context-loss handling and CSS fallback;
 - [x] typed lifecycle, events, stats, deep teardown;
 - [x] three.js adapter with fullscreen pass and deep disposal;
-- [x] clean-room effects: `waves`, `aurora`, `net`;
+- [x] clean-room effects: `waves`, `aurora`, `net`, `fog`, `clouds`, `clouds2`,
+      `cells`, `ripple`, `dots`, `globe`, `halo`, `rings`, `birds`, `topology`,
+      `trunk`;
 - [x] docs app with live configurator;
 - [x] unit, visual, size, and CI checks.
 
 ## 0.2 — coverage
 
-- [ ] clean-room `fog` (original noise/fog shader);
-- [ ] clean-room `cells` (voronoi shader);
-- [ ] clean-room `dots` (particle field);
-- [ ] clean-room `rings` / `halo` (geometry + bloom-ish shading);
-- [ ] `globe` (wireframe sphere + links);
-- [ ] `ripple` (pointer-driven shader);
+- [x] clean-room `fog` (original noise/fog shader);
+- [x] clean-room `cells` (Worley shader);
+- [x] clean-room `dots` (spherical point field);
+- [x] clean-room `rings` / `halo` (geometry + radial shader);
+- [x] clean-room `globe` (wireframe sphere + links);
+- [x] clean-room `ripple` (pointer-driven shader);
+- [x] clean-room `clouds`, `clouds2`, `birds`, `topology`, `trunk`;
 - [ ] visual regression baselines per effect;
 - [ ] memory/GPU leak stress test in CI.
 

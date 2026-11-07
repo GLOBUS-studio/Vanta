@@ -26,6 +26,45 @@ test('boots the hero effect and switches effects', async ({ page }) => {
   expect(errors).toEqual([])
 })
 
+test('cycles every effect without runtime errors', async ({ page }) => {
+  const errors: string[] = []
+  page.on('pageerror', (error) => errors.push(error.message))
+  page.on('console', (message) => {
+    if (message.type() === 'error') errors.push(message.text())
+  })
+
+  const keys = [
+    'waves',
+    'aurora',
+    'net',
+    'fog',
+    'clouds',
+    'clouds2',
+    'cells',
+    'ripple',
+    'dots',
+    'globe',
+    'halo',
+    'rings',
+    'birds',
+    'topology',
+    'trunk',
+  ]
+
+  await page.goto('/')
+  await expect(page.locator('#stage canvas')).toBeVisible()
+
+  for (const key of keys) {
+    await page.locator(`[data-effect="${key}"]`).click()
+    await expect(page.locator('#effect-name')).toHaveText(key.toUpperCase())
+    await expect(page.locator('#stage canvas')).toHaveCount(1)
+    await expect(page.locator('#fallback')).toBeHidden()
+    await page.waitForTimeout(250)
+  }
+
+  expect(errors).toEqual([])
+})
+
 test('pause, recreate, and keep a single canvas', async ({ page }) => {
   const errors: string[] = []
   page.on('pageerror', (error) => errors.push(error.message))

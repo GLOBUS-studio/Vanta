@@ -103,8 +103,8 @@ Quality multiplies the DPR, which is already capped by `maxPixelRatio` (default
 ## Deliberate non-goals for 1.0
 
 - WebGPU renderer. WebGL2 is the right floor for ambient backgrounds in 2026.
-- p5.js effects. `trunk` and `topology` would be rewritten as original shaders
-  or geometry, not bundled through an LGPL runtime.
+- p5.js effects. `trunk` and `topology` were rewritten as original three.js
+  geometry/line effects, not bundled through an LGPL runtime.
 - A React-only API. Framework wrappers are thin adapters over the same handle.
 - Reproducing every Vanta option name at any cost. Compatibility matters, but
   the new API is allowed to be clearer.

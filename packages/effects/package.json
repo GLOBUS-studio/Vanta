@@ -32,17 +32,65 @@
       "types": "./dist/index.d.ts",
       "import": "./dist/index.js"
     },
-    "./waves": {
-      "types": "./dist/waves.d.ts",
-      "import": "./dist/waves.js"
-    },
     "./aurora": {
       "types": "./dist/aurora.d.ts",
       "import": "./dist/aurora.js"
     },
+    "./birds": {
+      "types": "./dist/birds.d.ts",
+      "import": "./dist/birds.js"
+    },
+    "./cells": {
+      "types": "./dist/cells.d.ts",
+      "import": "./dist/cells.js"
+    },
+    "./clouds": {
+      "types": "./dist/clouds.d.ts",
+      "import": "./dist/clouds.js"
+    },
+    "./clouds2": {
+      "types": "./dist/clouds2.d.ts",
+      "import": "./dist/clouds2.js"
+    },
+    "./dots": {
+      "types": "./dist/dots.d.ts",
+      "import": "./dist/dots.js"
+    },
+    "./fog": {
+      "types": "./dist/fog.d.ts",
+      "import": "./dist/fog.js"
+    },
+    "./globe": {
+      "types": "./dist/globe.d.ts",
+      "import": "./dist/globe.js"
+    },
+    "./halo": {
+      "types": "./dist/halo.d.ts",
+      "import": "./dist/halo.js"
+    },
     "./net": {
       "types": "./dist/net.d.ts",
       "import": "./dist/net.js"
+    },
+    "./rings": {
+      "types": "./dist/rings.d.ts",
+      "import": "./dist/rings.js"
+    },
+    "./ripple": {
+      "types": "./dist/ripple.d.ts",
+      "import": "./dist/ripple.js"
+    },
+    "./topology": {
+      "types": "./dist/topology.d.ts",
+      "import": "./dist/topology.js"
+    },
+    "./trunk": {
+      "types": "./dist/trunk.d.ts",
+      "import": "./dist/trunk.js"
+    },
+    "./waves": {
+      "types": "./dist/waves.d.ts",
+      "import": "./dist/waves.js"
     }
   },
   "files": [
@@ -70,9 +118,21 @@
   "tsup": {
     "entry": [
       "src/index.ts",
-      "src/waves.ts",
       "src/aurora.ts",
-      "src/net.ts"
+      "src/birds.ts",
+      "src/cells.ts",
+      "src/clouds.ts",
+      "src/clouds2.ts",
+      "src/dots.ts",
+      "src/fog.ts",
+      "src/globe.ts",
+      "src/halo.ts",
+      "src/net.ts",
+      "src/rings.ts",
+      "src/ripple.ts",
+      "src/topology.ts",
+      "src/trunk.ts",
+      "src/waves.ts"
     ],
     "format": [
       "esm"
