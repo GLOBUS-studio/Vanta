@@ -10,7 +10,7 @@
     "url": "git+https://github.com/GLOBUS-studio/Vanta.git",
     "directory": "packages/svelte"
   },
-  "homepage": "https://github.com/GLOBUS-studio/Vanta#readme",
+  "homepage": "https://github.com/GLOBUS-studio/Vanta/tree/v2#readme",
   "bugs": {
     "url": "https://github.com/GLOBUS-studio/Vanta/issues"
   },

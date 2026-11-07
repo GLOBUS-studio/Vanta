@@ -2,11 +2,13 @@
 
 ## Prerequisites
 
-1. Create the npm organization `@vantajs2` (or replace the scope everywhere with
+1. Set the repository default branch to `v2`. The `master` branch is the frozen
+   Vanta 0.5 archive, not the active codebase.
+2. Create the npm organization `@vantajs2` (or replace the scope everywhere with
    your own scope before publishing).
-2. `npm login` locally, or add an `NPM_TOKEN` repository secret for CI.
-3. For GitHub Pages, enable **Settings → Pages → Source: GitHub Actions**.
-4. For provenance in CI, the repository must be public and the workflow needs
+3. `npm login` locally, or add an `NPM_TOKEN` repository secret for CI.
+4. For GitHub Pages, enable **Settings → Pages → Source: GitHub Actions**.
+5. For provenance in CI, the repository must be public and the workflow needs
    `id-token: write`.
 
 ## Versioning
